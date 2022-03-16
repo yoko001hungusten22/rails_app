@@ -1,10 +1,11 @@
+<%= render 'shared/user_error_messages.html.erb' %>
 <div class="top">
   <p> ユーザー登録ページ</p>
 </div>
 
 <div class="row">
   <div class="col-md-6 col-md-offset-3">
-    <%= form_with(model: @user, local: true) do |f| %>
+    <%= form_with(model: @user, local: true, url: sign_up_path) do |f| %>
       <%= f.label :name, "指名" %>
       <%= f.text_field :name %>
       <%= f.label :email %>
