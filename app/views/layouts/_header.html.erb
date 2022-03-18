@@ -3,9 +3,14 @@
         <%= link_to "rails app", root_path, id: "logo" %>
         <nav>
           <ul class="navbar-nav nav navbar-right">
-            <li><%= link_to "About", about_path %></li>
+          <li><%= link_to "About", about_path %></li>
+          <% if logged_in? %>
+            <li><%= link_to "My page", current_user %></li>
+            <li><%= link_to "Log out", logout_path, method: :delete %></li>
+          <% else %>
             <li><%= link_to "Sign up", sign_up_path %></li>
-            <li><%= link_to "Log in", '#' %></li>
+            <li><%= link_to "Log in", login_path %></li>
+          <% end %>
           </ul>
         </nav>
       </div>
