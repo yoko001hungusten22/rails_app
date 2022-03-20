@@ -8,7 +8,7 @@ class SessionsController < ApplicationController
     if user && user.authenticate(params[:session][:password])
       log_in(user)
       #認証成功の場合
-      redirect_to user
+      redirect_to_stored_url(user)
     else
       #認証失敗の場合
       render "new"
