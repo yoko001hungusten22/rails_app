@@ -1,7 +1,7 @@
-<% if @book.errors.full_messages.any? %>
+<% if model.errors.full_messages.any? %>
   <div class="alert alert-danger">
     <ul>
-      <% @book.errors.full_messages.each do |message| %>
+      <% model.errors.full_messages.each do |message| %>
         <li><%= message %></li>
       <% end %>
     </ul>
